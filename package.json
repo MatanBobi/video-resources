@@ -1,15 +1,19 @@
 {
-  "name": "gatsby-contentful-starter",
-  "description": "Starter Contentful Gatsby Blog",
+  "name": "video-reousrces",
+  "description": "Video Resources for coding",
   "version": "1.0.0",
-  "author": "Stefan Judis <stefanjudis@gmail.com>",
+  "author": "Matan Borenkraout",
   "bugs": {
-    "url": "https://github.com/contentful-userland/gatsby-contentful-starter/issues"
+    "url": "https://github.com/MatanBobi/video-resources/issues"
   },
   "dependencies": {
+    "gatsby-background-image": "^0.10.2",
     "gatsby-image": "^2.2.16",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-react-helmet": "^3.1.22",
+    "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.4.5",
+    "gatsby-plugin-styled-components": "^3.1.19",
     "gatsby-source-contentful": "^2.1.86",
     "gatsby-transformer-remark": "^2.6.52",
     "gatsby-transformer-sharp": "^2.3.14",
@@ -17,10 +21,13 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "sharp": "^0.24.0"
+    "react-tooltip": "^4.1.0",
+    "sharp": "^0.24.0",
+    "styled-components": "^5.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
+    "babel-plugin-styled-components": "^1.10.7",
     "chalk": "^3.0.0",
     "contentful-import": "^7.4.3",
     "dotenv": "^8.0.0",
@@ -42,7 +49,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/contentful-userland/gatsby-contentful-starter.git"
+    "url": "git+https://github.com/MatanBobi/video-resources.git"
   },
   "scripts": {
     "dev": "npm run develop",
