@@ -1,11 +1,10 @@
 {
-  "name": "Contentful Gatsby Starter",
-  "description": "Gatsby starter for a Contentful project.",
+  "name": "Video Resources",
+  "description": "Video Resources for coding",
   "keywords": [
-    "contentful",
-    "gatsby",
-    "static",
-    "ssg"
+    "videos",
+    "coding",
+    "react"
   ],
   "repository": "https://github.com/contentful-userland/gatsby-contentful-starter",
   "success_url": "/",

@@ -18,7 +18,7 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful starter',
+    title: 'Video Resources',
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
@@ -29,6 +29,23 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Roboto:300,400,600`,
+          `Nunito:300,400,600,700`
+        ],
+        display: 'swap'
+      }
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        path: `${__dirname}/src/icons`,
+        name: `assets`,
+      }
     }
   ],
 }
