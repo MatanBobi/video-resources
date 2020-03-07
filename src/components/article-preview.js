@@ -52,8 +52,8 @@ const PlayButton = styled.div`
     fill: #ffffff;
   }
 
-  &:hover{
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
 `
 
@@ -97,15 +97,21 @@ export default ({ article }) => {
             setIsHover(false)
           }}
         >
-          <StyledLink
-            href={article.videoUrl.videoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <PlayIcon />
-          </StyledLink>
+          {article && article.videoUrl && article.videoUrl.videoUrl && (
+            <StyledLink
+              href={article.videoUrl.videoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <PlayIcon />
+            </StyledLink>
+          )}
         </PlayButton>
-        <PreviewTitle data-tip={article.description.internal.content}>{article.title}</PreviewTitle>
+        {article.description.internal && (
+          <PreviewTitle data-tip={article.description.internal.content}>
+            {article.title}
+          </PreviewTitle>
+        )}
         <Participant>{article.participant}</Participant>
         {/* <p
       dangerouslySetInnerHTML={{
