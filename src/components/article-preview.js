@@ -18,9 +18,6 @@ const PreviewTitle = styled.h3`
   margin: 20px 0 0;
   text-align: center;
   line-height: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 `
 
 const FlexWrapper = styled.div`
