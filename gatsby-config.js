@@ -18,7 +18,7 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Video Resources',
+    title: 'Vidit',
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [

@@ -19,12 +19,15 @@ const Wrapper = styled.div`
   }
 `
 
-const RecentWrapper = styled.div`
+const VideosWrapper = styled.div`
   padding: 25vh 0;
-
   @media (max-width: 600px) {
     padding: 6vh 0;
   }
+`
+
+const CategoryWrapper = styled.div`
+  margin: 24px 0;
 `
 
 const Title = styled.div`
@@ -51,7 +54,7 @@ const StyledLi = styled.li``
 const SecondaryTitle = styled.h4`
   color: #ffffff;
   font-weight: 400;
-  margin: 12px 0 20px;
+  margin: 12px 0;
   font-size: 20px;
   font-family: 'Roboto';
 `
@@ -63,10 +66,38 @@ const StyledBackgroundImg = styled(BackgroundImage)`
   top: 0;
 `
 
+const ArticleList = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 7vmin;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4vmin;
+  }
+`
+
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allContentfulVideo.edges')
+    const postsByTags =
+      posts &&
+      posts.reduce((postsByTags, { node: currentPost }) => {
+        currentPost.tags?.forEach(tag => {
+          if (!postsByTags[tag]) {
+            postsByTags[tag] = [currentPost]
+            return
+          }
+
+          postsByTags[tag] = [...postsByTags[tag], currentPost]
+        })
+
+        return postsByTags
+      }, {})
     const data = get(this, 'props.data.allContentfulSite.edges')
     const backgroundFluidImageStack = [
       data[0].node.backgroundImage.fluid,
@@ -78,31 +109,33 @@ class RootIndex extends React.Component {
           <StyledBackgroundImg Tag="section" fluid={backgroundFluidImageStack}>
             <Helmet title={siteTitle} />
             <Wrapper>
-              <Title>
-                Video resources
-              </Title>
-              <Subtitle>
-                All the latest video resources in one place
-              </Subtitle>
+              <Title>Vidit</Title>
+              <Subtitle>All the latest video resources in one place</Subtitle>
               <SecondSubtitle>
                 Built and maintained by Matan Borenkraout
               </SecondSubtitle>
-              <RecentWrapper>
-                <SecondaryTitle>Recent</SecondaryTitle>
-                <ul className="article-list">
-                  {posts.map(({ node }) => {
-                    return (
-                      <StyledLi key={node.slug}>
-                        <ArticlePreview article={node} />
-                      </StyledLi>
-                    )
-                  })}
-                </ul>
-              </RecentWrapper>
+              <VideosWrapper>
+                {Object.keys(postsByTags).map(tagName => {
+                  return (
+                    <CategoryWrapper>
+                      <SecondaryTitle>{tagName}</SecondaryTitle>
+                      <ArticleList>
+                        {postsByTags[tagName].map(post => {
+                          return (
+                            <StyledLi key={post.slug}>
+                              <ArticlePreview article={post} />
+                            </StyledLi>
+                          )
+                        })}
+                      </ArticleList>
+                    </CategoryWrapper>
+                  )
+                })}
+              </VideosWrapper>
             </Wrapper>
           </StyledBackgroundImg>
         </div>
-        <ReactTooltip className='description-tooltip'/>
+        <ReactTooltip className="description-tooltip" />
       </Layout>
     )
   }
