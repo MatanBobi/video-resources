@@ -15,6 +15,7 @@ const UnorderedList = styled.ul`
   display: flex;
   justify-content: flex-end;
   max-width: 1200px;
+  margin: 16px auto
 `
 
 const StyledLink = styled(Link)`

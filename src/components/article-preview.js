@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 import styled, { css } from 'styled-components'
 import styles from './article-preview.module.css'
 
-import PlayIcon from '../icons/play.svg'
+import OpenInNewIcon from '../icons/open-in-new.svg'
 
 const VideoPreviewWrapper = styled.div`
   border-radius: 8px;
@@ -18,6 +18,9 @@ const PreviewTitle = styled.h3`
   margin: 20px 0 0;
   text-align: center;
   line-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `
 
 const FlexWrapper = styled.div`
@@ -27,7 +30,7 @@ const FlexWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 15px;
-  min-height: 55px;
+  min-height: 62px;
   z-index: 2;
 `
 
@@ -40,15 +43,15 @@ const Participant = styled.div`
 const PlayButton = styled.div`
   background: rgb(107, 162, 255);
   position: absolute;
-  top: -24px;
+  top: -20px;
   left: 20px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   transition: all 200ms ease-in-out;
   svg {
-    height: 40px;
-    width: 40px;
+    height: 24px;
+    width: 24px;
     fill: #ffffff;
   }
 
@@ -103,7 +106,7 @@ export default ({ article }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <PlayIcon />
+              <OpenInNewIcon />
             </StyledLink>
           )}
         </PlayButton>
