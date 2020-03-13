@@ -46,6 +46,7 @@ module.exports = {
         path: `${__dirname}/src/icons`,
         name: `assets`,
       }
-    }
+    },
+    'gatsby-plugin-styled-components'
   ],
 }
