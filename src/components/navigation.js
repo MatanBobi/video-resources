@@ -23,9 +23,12 @@ const StyledLink = styled(Link)`
   font-size: 12px;
 `
 
-export default () => (
+export default (props) => (
   <NavigationWrapper role="navigation">
     <UnorderedList>
+    <li onClick={props.toggleTheme} className={styles.navigationItem}>
+      Toggle Theme
+    </li>
       <li className={styles.navigationItem}>
         <StyledLink to="/">Home</StyledLink>
       </li>

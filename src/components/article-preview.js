@@ -87,7 +87,7 @@ export default ({ article }) => {
   return (
     <VideoPreviewWrapper className={styles.preview}>
       <Overlay isOn={isHovering} />
-      <Img alt="" fluid={article.heroImage.fluid} />
+      <img alt="" src={article.imageUrl} />
       <FlexWrapper>
         <PlayButton
           onMouseEnter={() => {
@@ -97,9 +97,9 @@ export default ({ article }) => {
             setIsHover(false)
           }}
         >
-          {article && article.videoUrl && article.videoUrl.videoUrl && (
+          {article && article.videoUrl && (
             <StyledLink
-              href={article.videoUrl.videoUrl}
+              href={article.videoUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -107,8 +107,8 @@ export default ({ article }) => {
             </StyledLink>
           )}
         </PlayButton>
-        {article.description.internal && (
-          <PreviewTitle data-tip={article.description.internal.content}>
+        {article.description && (
+          <PreviewTitle data-tip={article.description}>
             {article.title}
           </PreviewTitle>
         )}

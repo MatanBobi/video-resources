@@ -1,0 +1,74 @@
+[
+  {
+    "title": "use React.memo With Context",
+    "participant": "Leigh Halliday",
+    "uploadDate": "2020-03-07",
+    "description": "That React Component Right Under Your Context Provider Should Probably Use React.memo",
+    "videoUrl": "https://www.youtube.com/watch?v=CDGBTjMBJzg",
+    "imageUrl": "https://images.ctfassets.net/6ehz62nxgkmj/6EJug3J4pTXndp49MCMdN0/f2ce2b8e9e7dfdad7ff51ea8b1b4234a/alwaysusereactmemo.jpg?h=250",
+    "tags": ["React"]
+  },
+  {
+    "title": "Improve Image Loading",
+    "participant": "Jen Simmons",
+    "uploadDate": "2020-03-07",
+    "description": "Do This to Improve Image Loading on Your Website",
+    "videoUrl": "https://www.youtube.com/watch?v=4-d_SoCHeWE",
+    "imageUrl": "https://images.ctfassets.net/6ehz62nxgkmj/4TOypNzGLXxbDEhUVjKQhi/3836fe3431f75c5e175cb8473b623a7e/jensimmons.jpg?h=250",
+    "tags": ["HTML"]
+  },
+  {
+    "title": "Federated Modules in Webpack 5",
+    "participant": "Jack Herrington",
+    "uploadDate": "2020-03-13",
+    "description": "Introducing Federated Modules in Webpack 5",
+    "videoUrl": "https://www.youtube.com/watch?v=D3XYAx30CNc",
+    "imageUrl": "https://images.ctfassets.net/6ehz62nxgkmj/2pew3ajImkcyqka2zgZrR3/16f7cfb7c27d0903e7ebaa5d59eba52c/federatedmodules.jpg?h=250",
+    "tags": ["JavaScript", "Webpack"]
+  },
+  {
+    "title": "React Router v6 Tutorial",
+    "participant": "Leigh Halliday",
+    "uploadDate": "2020-03-13",
+    "description": "React Router v6 Tutorial in 15 Minutes",
+    "videoUrl": "https://www.youtube.com/watch?v=4NpGzBEySvI",
+    "imageUrl": "https://images.ctfassets.net/6ehz62nxgkmj/26g6LIPqRwlA5lQCIe5Kqc/8aabd0b9f723f83764e5ff0ea0e82a60/react-router-v6.jpg?h=250",
+    "tags": ["React"]
+  },
+  {
+    "title": "Use status enum",
+    "participant": "Kent C. Dodds",
+    "uploadDate": "2020-03-13",
+    "description": "Use a status enum instead of booleans",
+    "videoUrl": "https://egghead.io/lessons/react-use-a-status-enum-instead-of-booleans",
+    "imageUrl": "https://images.ctfassets.net/6ehz62nxgkmj/1Ov5iVwuXyuwCeh9FLp5mZ/08fd6b9e814325dab85cb5a73fd1423f/egghead-use-a-status-enum-instead-of-booleans-r1PA3LoEU.jpg?h=250",
+    "tags": ["React"]
+  },
+  {
+    "title": "Amazing Code Reviews",
+    "participant": "Alejandro Lujan",
+    "uploadDate": "2020-03-04",
+    "description": "GOTO 2019 • Amazing Code Reviews: Creating a Superhero Collective • Alejandro Lujan",
+    "videoUrl": "https://www.youtube.com/watch?v=ly86Wq_E18o",
+    "imageUrl": "https://images.ctfassets.net/6ehz62nxgkmj/1LUatONFaGS3GJU5m4FmDv/3e2017a64f51c3b490304804b0519a3d/code-review.jpg?h=250",
+    "tags": ["Work Process"]
+  },
+  {
+    "title": "Avoiding state flickers",
+    "participant": "Joshua Comeau",
+    "uploadDate": "2020-03-23",
+    "description": "Avoiding state flickers in Gatsby",
+    "videoUrl": "https://egghead.io/lessons/react-avoiding-state-flickers-in-gatsby-applications",
+    "imageUrl": "https://images.ctfassets.net/6ehz62nxgkmj/6Xa62o80GzYXOoHGDfP6um/4bdcab0564626928ec18826f50b5d6a1/gatsby-avoiding-state-flickers-in-gatsby-applications-SkQ340p4I.jpg?h=250",
+    "tags": ["React", "Gatsby"]
+  },
+  {
+    "title": "React Hook Pitfalls",
+    "participant": "Kent C. Dodds",
+    "uploadDate": "2020-03-04",
+    "description": "React Hook Pitfalls - Kent C. Dodds - React Rally 2019",
+    "videoUrl": "https://www.youtube.com/watch?v=VIRcX2X7EUk",
+    "imageUrl": "https://images.ctfassets.net/6ehz62nxgkmj/5iyHF6k5dIR3f4toXfgzAA/a0ae1ef5f3a3abf033e9eed85eea8b67/kent-react-rally.jpg?h=250",
+    "tags": ["React"]
+  }
+]

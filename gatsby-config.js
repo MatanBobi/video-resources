@@ -1,11 +1,11 @@
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env.${process.env.NODE_ENV}`,
 })
 
 const contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  host: process.env.CONTENTFUL_HOST
+  host: process.env.CONTENTFUL_HOST,
 }
 
 const { spaceId, accessToken } = contentfulConfig
@@ -23,6 +23,7 @@ module.exports = {
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
     'gatsby-transformer-remark',
+    'gatsby-transformer-json',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
@@ -31,22 +32,40 @@ module.exports = {
       options: contentfulConfig,
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        fonts: [
-          `Roboto:300,400,600`,
-          `Nunito:300,400,600,700`
-        ],
-        display: 'swap'
-      }
+        path: `${__dirname}/content/videos`,
+        name: `videos`,
+      },
     },
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets`,
+        name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/site`,
+        name: `site`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Roboto:300,400,600`, `Nunito:300,400,600,700`],
+        display: 'swap',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
       options: {
         path: `${__dirname}/src/icons`,
         name: `assets`,
-      }
+      },
     },
-    'gatsby-plugin-styled-components'
+    'gatsby-plugin-styled-components',
   ],
 }

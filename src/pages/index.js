@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
@@ -52,11 +52,12 @@ const SecondSubtitle = styled(Subtitle)`
 const StyledLi = styled.li``
 
 const SecondaryTitle = styled.h4`
-  color: #ffffff;
+  color: ${({ theme }) => theme.tagTitle};
   font-weight: 400;
   margin: 12px 0;
   font-size: 20px;
   font-family: 'Roboto';
+  transition: color 250ms ease-in-out;
 `
 
 const StyledBackgroundImg = styled(BackgroundImage)`
@@ -83,7 +84,8 @@ const ArticleList = styled.ul`
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allContentfulVideo.edges')
+    // const posts = get(this, 'props.data.allContentfulVideo.edges')
+    const posts = get(this, 'props.data.allVideosJson.edges')
     const postsByTags =
       posts &&
       posts.reduce((postsByTags, { node: currentPost }) => {
@@ -102,6 +104,7 @@ class RootIndex extends React.Component {
     const backgroundFluidImageStack = [
       data[0].node.backgroundImage.fluid,
       `linear-gradient(0deg,rgba(29,27,39,1) 30%,rgba(29,27,39,0.5) 50%, rgba(29,27,39,0) 70%)`,
+      // `linear-gradient(0deg,rgba(255,255,255,1) 30%,rgba(255,255, 255,0.5) 50%, rgba(255,255, 255,0) 70%)`,
     ].reverse()
     return (
       <Layout location={this.props.location}>
@@ -141,7 +144,7 @@ class RootIndex extends React.Component {
   }
 }
 
-export default RootIndex
+export default withTheme(RootIndex)
 
 export const pageQuery = graphql`
   query HomeQuery {
@@ -150,26 +153,16 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulVideo(sort: { fields: [uploadDate], order: DESC }) {
+    allVideosJson(sort: { fields: [uploadDate], order: DESC }) {
       edges {
         node {
-          title
+          imageUrl
+          description
           participant
-          uploadDate(formatString: "MMMM Do, YYYY")
           tags
-          videoUrl {
-            videoUrl
-          }
-          heroImage {
-            fluid(maxHeight: 150, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid_tracedSVG
-            }
-          }
-          description {
-            internal {
-              content
-            }
-          }
+          title
+          uploadDate
+          videoUrl
         }
       }
     }
