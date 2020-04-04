@@ -6,9 +6,12 @@ import Helmet from 'react-helmet'
 import Hero from '../components/hero'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
-import ArticlePreview from '../components/article-preview'
 import BackgroundImage from 'gatsby-background-image'
 import ReactTooltip from 'react-tooltip'
+
+// Components
+import MainPageHeader from '../components/MainPageHeader'
+import VideosSection from '../components/VideosSection'
 
 const Wrapper = styled.div`
   max-width: 1200px;
@@ -26,40 +29,6 @@ const VideosWrapper = styled.div`
   }
 `
 
-const CategoryWrapper = styled.div`
-  margin: 24px 0;
-`
-
-const Title = styled.div`
-  font-size: 52px;
-  font-family: 'Roboto';
-  padding-top: 72px;
-  font-weight: 300;
-  margin-bottom: 12px;
-`
-
-const Subtitle = styled.div`
-  font-size: 24px;
-  font-family: 'Roboto';
-  font-weight: 300;
-  margin: 4px 0;
-`
-
-const SecondSubtitle = styled(Subtitle)`
-  font-size: 18px;
-`
-
-const StyledLi = styled.li``
-
-const SecondaryTitle = styled.h4`
-  color: ${({ theme }) => theme.tagTitle};
-  font-weight: 400;
-  margin: 12px 0;
-  font-size: 20px;
-  font-family: 'Roboto';
-  transition: color 250ms ease-in-out;
-`
-
 const StyledBackgroundImg = styled(BackgroundImage)`
   height: 70vh;
   max-height: 950px;
@@ -67,24 +36,9 @@ const StyledBackgroundImg = styled(BackgroundImage)`
   top: 0;
 `
 
-const ArticleList = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 7vmin;
-
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 4vmin;
-  }
-`
-
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    // const posts = get(this, 'props.data.allContentfulVideo.edges')
     const posts = get(this, 'props.data.allVideosJson.edges')
     const postsByTags =
       posts &&
@@ -112,27 +66,10 @@ class RootIndex extends React.Component {
           <StyledBackgroundImg Tag="section" fluid={backgroundFluidImageStack}>
             <Helmet title={siteTitle} />
             <Wrapper>
-              <Title>Vidit</Title>
-              <Subtitle>All the latest video resources in one place</Subtitle>
-              <SecondSubtitle>
-                Built and maintained by Matan Borenkraout
-              </SecondSubtitle>
+              <MainPageHeader />
               <VideosWrapper>
-                {Object.keys(postsByTags).map(tagName => {
-                  return (
-                    <CategoryWrapper>
-                      <SecondaryTitle>{tagName}</SecondaryTitle>
-                      <ArticleList>
-                        {postsByTags[tagName].map(post => {
-                          return (
-                            <StyledLi key={post.slug}>
-                              <ArticlePreview article={post} />
-                            </StyledLi>
-                          )
-                        })}
-                      </ArticleList>
-                    </CategoryWrapper>
-                  )
+                {Object.keys(postsByTags).map(tag => {
+                  return <VideosSection videos={postsByTags[tag]} tag={tag} />
                 })}
               </VideosWrapper>
             </Wrapper>
