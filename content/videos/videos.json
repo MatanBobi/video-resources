@@ -70,5 +70,32 @@
     "videoUrl": "https://www.youtube.com/watch?v=VIRcX2X7EUk",
     "imageUrl": "https://images.ctfassets.net/6ehz62nxgkmj/5iyHF6k5dIR3f4toXfgzAA/a0ae1ef5f3a3abf033e9eed85eea8b67/kent-react-rally.jpg?h=250",
     "tags": ["React"]
+  },
+  {
+    "title": "Node Clean Architecture",
+    "participant": "Bill Sourour",
+    "uploadDate": "2019-04-20",
+    "description": "Using Clean Architecture for Microservice APIs in Node.js",
+    "videoUrl": "https://www.youtube.com/watch?v=CnailTcJV_U",
+    "imageUrl": "https://i.ytimg.com/vi/CnailTcJV_U/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLD9HgfCKjSaqnyakJEIXL--0on_BQ",
+    "tags": ["Node", "Design"]
+  },
+  {
+    "title": "Why Isn't Functional Programming the Norm",
+    "participant": "Richard Feldman",
+    "uploadDate": "2019-09-30",
+    "description": "Why Isn't Functional Programming the Norm - Clojutre 2019",
+    "videoUrl": "https://www.youtube.com/watch?v=QyJZzq0v7Z4",
+    "imageUrl": "https://i.ytimg.com/vi/QyJZzq0v7Z4/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLA81Y0mfpbIyKZ1dU8VCQOR-4l3Gw",
+    "tags": ["functional programming"]
+  },
+  {
+    "title": "Learning Functional Programming with JavaScript",
+    "participant": "Anjana Vakil",
+    "uploadDate": "2016-06-14",
+    "description": "Learning Functional Programming with JavaScript - Anjana Vakil - JSUnconf",
+    "videoUrl": "https://www.youtube.com/watch?v=e-5obm1G_FY&t=141s",
+    "imageUrl": "https://i.ytimg.com/vi/e-5obm1G_FY/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAng0xMCxmoQ9iASXvLBbaO_-UxvQ",
+    "tags": ["functional programming", "Javascript"]
   }
 ]
